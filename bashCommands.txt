@@ -1,0 +1,89 @@
+
+//neccessary commands starts from here................................................>>>>
+1.pwd  , clear
+      
+2. cd ,cd <path>, cd ../.. , cd ~
+
+3. ls , ls <path> , ls -l , ls -r , ls -a ,ls -t ,ls -rlta 
+ ls -la (see hidden files)
+
+ls *.json
+
+ls hi*         (for files only)
+
+4.mkdir <newFolderName>
+
+5.touch <NewFileName>
+
+5. rm -r <filename>         (delete file)
+   rm -r <foldername>         (delete folder)
+
+6. cat <ViewThisfile>
+head <file>
+tail -20 <file>
+
+wc 
+grep
+sed
+awk
+
+7.vi <editThisfile>
+esc 
+:q! -exit vim
+:wq! -save and exit vim
+x (backspace)
+d(delete all)         //do this in esc state
+
+8.mv <movethisFile> <tohere>
+  mv <moveThisFolder> <toHere>
+9.cp <copythisFile> <toHere>
+  cp -r <copythisFolder> <toHere>
+
+10.node ,npm install ,nvm ,git
+
+11.chmod -R u+rwx <folder>
+  chmod  u+rwx <file>
+
+12. echo "hello"
+    echo "$path"
+
+13. ipconfig(win)/ifconfig(mac/linux)
+
+
+
+
+more useful shortcuts :)------------------------------------------------------------>>>
+0.make any command shorter using alias 
+nano ~/.bashrc
+write the alias
+ctrl o,enter,ctrl x
+source ~/.bashrc
+---------------------------------------------------------------
+1.go to the directory which u have to open with any application
+----------------------------------------------------------------
+
+
+
+for windows-------------->>
+
+1. start <ApplicationName/.exe file>   
+   start chrome <link(if)> , 'path/ht.html' , "$pwd/file.png" (pwd only works with "",rest place ''="")
+   start whatsapp:
+   start code <filename>      (vscode)
+   start cmd
+   start node
+   start explorer   (file manager)
+   start notepad <filename> (easiest)
+   start ms-settings:
+   start ms-photos:
+   start ms-calculaor:
+   start ms-clock: 
+   start ms-copliot:
+   start wmplayer
+   start msedge
+   start ''   (cmd)
+
+  start "" "path/file.mp4"
+  start "path/file.jpg" or any other extension
+
+

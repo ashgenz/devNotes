@@ -1,0 +1,1985 @@
+/*css=cascading style sheets,,used for styling and makes the website look good*/
+/*it changes color,bg color,.text,buttons,placing things*/
+
+/*basic format of css,,,,selector(h1),property(color,bg color) and value(red,blue)
+here h1 isheading tag we used in html,,so we are appling stylinh=g to the heading eleemnt
+
+
+h1{
+    color:red;
+    background-color: blue;
+}
+
+
+all properties of css can be find at "mdn css"*/
+
+
+
+
+
+/*external styling,and linking css with html with link tag*/
+h4{
+    color: rgb(7, 70, 84);
+    background-color: rgb(255, 239, 206);
+}
+
+
+
+/*color property ,background-color or background
+we can search mdn color*/
+h2{
+    color: #000276;
+    background: #bdbef4;
+}
+
+
+/*here color property is used for foregroung eg text in this case */
+button{
+    color: rgb(255, 255, 255);
+    background-color: rgb(52, 81, 81);
+}
+
+/*color systems-name, rgb code(0 to 255intensity) ,and  #hex codes */
+
+/*$ color theory chart(rgb)
+
+reg+green=yellow
+red+blue=pink/purple
+blue+green=light greenish blue
+red+green+blue=white */
+
+/*% we can also use google color picker with chrome*/
+
+
+/*hexadecimal(16 characters) color system
+o to 9 ,A to F */
+
+/*number systems
+1.decimal=0 to 9
+2.binary=0,1
+3hexa=16 characters=1 to ,A to F(full)
+hex code have 6 digits in code ,where first two for red ,then green then blue*/
+
+
+h3{
+    color: #d070f3;
+}
+
+
+/*practice question
+1.#fffff
+2.rgb(255,200,0)
+2.rgb(100,140,255)*/
+
+h1{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 600;
+    text-decoration: wavy line-through;
+    text-decoration-color: rgb(255, 0, 4);
+    line-height:20px;
+    letter-spacing: 10px;
+    font-size: large;
+    font-family: cursive, Helvetica, sans-serif;
+}
+
+
+/*text realted properties
+text-align=*relative right left center etc
+font-weight=boldness   100 to 900 ,normal=400,bold=700,bolder,lighter
+text-decoration=decorative lines=underline,linethrough,overline   
+line-height=space between lines
+letter-spacing=space between letters
+font-size=obv*/
+
+/*@see mdn for these text properties*/
+/*!we can remove underline from anchor tag by " text-decoration:none; "*/
+/*use 1.5 ,,for 1.5 times spacing then normal*/
+
+a{
+    text-decoration: none ;
+}
+
+/*relative vs absolute font size units */
+/*$ px is a absolute unnit so we didnot use for responsive sites(sites which change their layout acc. to screen size )*/
+
+
+
+
+/*font family=font style*/
+/*!check cs font syle site to check which font styke used more in win,mac...*/
+
+/*backup font family="font-family: Arial, Helvetica, sans-serif;" */
+
+
+
+
+/*css part2 
+universal selector=*(asterisks) to apply changes to every ext or elements out there  
+*/
+*{
+    font-family:Arial, Helvetica, sans-serif;   
+    color: #ffffff;
+}
+
+/*element selector 
+like h1{
+}
+h1,h3{
+}
+*/
+
+
+
+
+/*
+id selector=use to apply css to any particular element through its id 
+
+#myid {
+    }
+its case sensitive
+
+
+since <h1 id="myid">
+*/
+
+#Quora {
+    color: #b41f1f;
+}
+
+#login{
+    background-color: white;
+    color: black;
+}
+
+#signup {
+    background-color:#b41f1f;
+    color: white;
+}
+
+
+
+/*
+class selctor=for applying style to a complete class which have bunch of elements
+.class {
+
+}
+
+
+sine <h1 class ="a">
+<h6 class ="a">
+*/
+
+ .a {
+    background-color: #07097c;
+    color: white;
+ }
+
+ .b {
+    background-color: #7000a8;
+    color: white;
+ }
+
+
+
+
+
+ /*practice question(facebook)
+*/
+#facebook {
+    color: #393bbd;
+}
+#search1 {
+    background-color: rgb(103, 95, 169);
+    color: rgb(255, 255, 255);
+}
+#login1 {
+    background-color: #a449ff;
+    color: rgb(255, 255, 255);
+}
+#register1 {
+    background-color: #7794c3;
+    color: rgb(255, 255, 255);
+}
+#search2 {
+    background-color:white ;
+    color: black;
+}
+
+
+/*desendent selectors 
+
+
+/*% 1)div ke ndar ul ke andar li(#last)
+div p ul li {
+}
+in below code we can also write it as "div #last",,just by gving the first and last tag names,,,,not need to give the complete tag paths of inbetween....
+*/
+
+div ul #last {
+    color: #ca0707;
+}
+
+
+
+/*% 2).paragraph class ke andar wale annchor tags
+/*element desend in a class
+example anchor element in paragraph class 
+*/
+.paragraph a {
+    color: #c18e00;
+}
+
+
+/*
+sibling combinator
+$ex-if i want to apply style to all h3 which is just after <p> tag,,,note-h3 is not under <p> tag
+p + h3 {
+}
+*/
+
+
+
+/*
+child combinator=
+for example- when <p> is under <div>
+div > button {
+    }
+$we can only go upto one child in child combinator
+*/
+
+
+
+/*attribute selector=if i want to apply style to selectors,,when a tag satisfies the given attribute 
+input[type="text"] {
+    }
+*/ 
+input[type="text"] {
+    color: #ffbb00;
+}
+input[type ="password"] {
+    color: #29df00;
+}
+
+input[type ="password"]{
+    color: #a449ff;
+}
+
+
+/*practice question 
+ex-if i want to add style to a element ex- <p> element  ,,which is inside a div of a id="myid"
+div[myid] {
+    }
+note-there should not be space between div and its id 
+*/
+div[id="wooh"] p {
+    color: #ff0000;
+}
+
+
+/*
+psuedo classes=like if we want to change the color of a button when mouse hover over it 
+element : hover {
+    }
+
+hover=...style change on hover
+active=style change on click
+chceked=used for radiboxes,checkboxes,,when we want to change style of these two things when thet got checked
+nth-of-type=when we want to style  the nth element
+
+note-
+*/
+#login:hover{
+    background-color: rgb(0, 151, 246);
+}
+
+#signup:hover{
+    background-color:#d70101 ;
+}
+
+p:active{
+    font-weight: 900;
+}
+
+input[type="checkbox"]:checked + label{
+    color: #0c9000;
+    font-weight: 550;
+}
+
+.dd:nth-of-type(2n){
+    color: #a380d3;
+}
+
+
+/*
+psuedo elements=when we have to apply style to only a part of a element ,,like the first line or first letter 
+element::first-line
+element::first-letter
+element::selection,,means if we select the elemnt with mouse,,it can style the element differently 
+*/
+#Quora::selection{
+    background-color: #adad21;
+}
+/**doubt*/
+#Quora::first-line{
+    background-color: #000000;
+}
+
+
+
+/*
+css=cascading styleshet
+
+cascading means ,,jo chiz baadmei define ki gayi hai ,,,vo apply hogi
+-even if we link our two css files to our html,,,,the css we linked baadmei ,,will apply styles to the html,,,,*if we have two styls for a element ,,warna dono styles apply hongi
+*/
+
+
+/*
+selector specificity=__,__,__   =no.o id,   no.of class+attributes+psuedo class,    no. of elemenbts
+more specificity means more stronger,,and it will apply more strongly
+more this no. means more specific the selector is,
+
+%importannt> inline style> id> class> element
+more selectors>less selectors
+
+means if we use a id to style anything ,,then we cant change its style baadmei,,bcz id is more specific
+%and jab specificity same ho,,tab cascading/baadmei wala apply hoga
+
+inline style= applying style in html file
+like--<button style="bg-color:black;">login</button>
+
+div p =002 specificity
+*/
+
+h1:hover{
+    background-color: #464646 !important;
+}
+
+
+
+/*
+inheritance in css=when properties of parent tag/element got reatined in their child,,and theirs child 
+like -div > p > ul>li  then if we have set bg color to div and p,,and no bg color color to ul,li...then ul,li will also get the same bg color of p element ,,
+we havenot set the bg color color of p then they will inherit the properties of div  
+
+
+by default the input area of box doesnot inherit the same property as of just parents,,,so we have to "write inherit" to inherit the property from parents.
+*/
+
+
+input{
+    background-color: inherit;
+}
+
+
+
+/* :) we can search any color pallate so that we can get the set of 4-5 colors which looks good as general,,and we can select from these pallates and no need to select color by own everytime*/
+
+
+
+
+
+
+
+/*
+css part3
+*/
+* {
+    background-color: #3d3d3d; 
+}
+h3{
+    background-color: #343333;   
+}
+
+
+/*
+box model 
+content(,height,width),padding,border,margin
+
+we can write any paragraph with only using div also,like
+<div>fjjffjfj</div>
+
+for height and width of content area,like for div
+div{
+    height:150px;
+    width: 200px;
+}
+
+orange area is padding
+and blue is content area
+
+
+
+border-width 
+borde-style 
+border-color
+S
+we can do all these three in single line also
+*/
+#Quora {
+    border-width: 1px;
+    border-style:groove;
+    border-color: #ce3535;
+}
+#Quora{
+    border: 1px groove  #ce3535 ;
+}
+
+/*
+border-left
+border-right
+border-top
+border-bottom
+*/
+#Quora {
+    border-left-color: #e92b2b;
+    border-left-width: 5px;
+}
+
+/*
+border-radius=making edges curved
+
+50% means circular border
+*/
+#Quora{
+    border-top-left-radius:20px;
+}
+
+/*
+padding-right,left,top,bottom
+
+padding: 1px;
+means same padding of 1px in all dimesions
+
+padding: 1px 2px;
+means 1px is fo top and bottom and 2px padding for left and right 
+
+padding: 1px 2px 3px;
+means 1 for top,2 for right and left and 3 for bottom
+
+padding: 1px 2px 3px 4px;
+1 for top,2 for right ,3 for bottom,4 for left ,,,like clockwise loop from top
+*/
+#Quora {
+    padding-left: 20px;
+}
+
+
+
+/*
+margin=spacing outside of border,,or space between two elements
+orange is margin
+green is padding
+
+margin-bottom
+margin-top
+margin-left
+margin-right
+
+margin: 1px;
+margin:1px 2px;
+margin:1px 2px 3px;
+margin: 1px 2px 3px 4px;
+
+while setting margin for div,,we r unable to set the right margin properly
+
+we can also set the mariin as auto
+margin: 2px auto;
+so margin will change as per requirement
+*/
+
+
+#Quora{
+    margin: 20px 5px 15px;
+}
+
+
+
+
+/*
+practice question
+*/
+
+#outer {
+    height: 116px;
+    width: 40px;
+    border:1px solid #ffffff ;
+    background-color: #4f4f4f;
+    margin: 20px 10px;
+}
+.inner {
+    height: 30px;
+    width: 30px;
+    border:2px solid rgb(255, 255, 255);
+    margin: 4px;
+    border-radius: 50%;
+}
+
+#red {
+    background-color: #b41f1f;
+}
+
+#yellow {
+    background-color: #eee71e;
+}
+
+#green {
+    background-color: #29df00;
+}
+
+
+
+/*
+display property
+
+chahe pehle kuch bhi tha.....,finally agar dispaly block likhenge th block ban jaaega
+and similarly dispaly inline,,karenge toh inline bna jaaega 
+
+*/
+#Quora {
+    display: block;
+}
+
+.akash{
+    background: #ff0000;
+    height: 100px;
+    width: 100px;
+}
+.ashish{
+    background: #06bb2d;
+    height: 100px;
+    width: 100px;
+}
+
+/*
+*span doenot take "height,width" 
+*while padding,color,bg color,border
+*margin only set from left and right,,not from top and bottom
+*(margins only works in left and right ,,not in top and bottom for inline elements)
+*/
+
+#sp {
+    color: white;
+    height: 1px;
+    width: 1px ;
+    background-color: lime;
+    border: 3px solid white;
+    margin: 20px;
+    padding: 30px;
+}
+#pj {
+    background-color:#303030;
+}
+
+/*
+outer wale ko inline karo ,,and inner ko inline-block
+*/
+
+#out2 {
+    display: inline;
+}
+
+.in2 {
+    height: 100px;
+    width: 100px;
+    background-color: #95be00;
+    border: 2px solid white;
+    display: inline-block;
+    margin:20px 0px ;
+}
+
+/*
+display:none;
+will hide the elemnet from page,,,it is use when have to hide something for sometime ,but we dont want to delete any code
+*/
+
+
+/*
+absolute units=px,...etc
+% relative units=%,em,rem,...etc
+
+%likw if we want to set margin of a div aas 10 px inside a 20px div,,
+so we can do....
+{margin:20px;}
+{margin: 50%;}
+
+
+$or if we want to do a 50% padding relative font size of same div
+{font-size:__px;
+padding: 50%;}
+
+$padding can only be set wrt the element,,we cant do wrt to parent in it
+
+2em means double,3em means tripple,3.5em means 3.5times
+
+*/
+.ho {
+    font-size: 2em;
+}
+
+
+
+
+/*
+using rem..
+ rem=root em
+ */
+.hoo {
+    font-size: 2rem;
+}
+
+
+
+/*
+aplha channel=used for setting opacity of backgrounds(o to 1)
+rgba()255,255,255,0.3)
+
+whereas opacity sets for content as well as backgrounds,boreders etc
+*/
+#wr {
+    background-color:rgba(0,0,255,0.7);
+    margin: 5px 50px;
+    border:1px solid white;
+    border-radius: 5%;
+    height: 50px;
+    width: 100px;
+    font-weight: 650;
+    font-size: 25px;
+
+}
+
+#wrr {
+    background-color:rgba(0,0,255,1);
+    margin: 5px 50px;
+    border:1px solid white;
+    border-radius: 5%;
+    height: 50px;
+    width: 100px;
+    font-weight: 650;
+    font-size: 25px;
+    opacity: 0.6;
+}
+
+
+
+/*
+css transition=like we have select the type of transition we want ,,,like for psudeo classes for ex-hover 
+
+transition: porperty 
+trasnsition duration 
+
+*/
+
+#wr:hover {
+    background-color: #5d5d5c;
+    transition: 1s;
+}
+
+#wrr:hover {
+    background-color: #5d5d5c;
+    border-radius: 50%;
+    transition: 1s;
+}
+
+ 
+/*
+avi doubt-
+if theres no parent element/same element's font size ,, then 1 em=16px
+yes its true
+*/
+
+#ggh {
+    height: 80px;
+    width: 80px;
+    background-color: #29df00;
+    margin: 3em;
+    padding: 2em;
+}
+
+#ggj {
+    background-color: #393bbd;
+    padding: 2em;
+}
+ 
+
+
+/*
+transitions continued
+
+transition duration:
+transition delay
+......etc
+
+transition: duration   delay;
+transition:property name    duration     timing     delay;
+
+button created without using button tag ,below..
+*/
+#anm {
+    height:30px;
+    width: 64px;
+    background-color:rgba(0, 0, 0, 0.7);
+    margin: 5px 50px;
+    border:1px solid white;
+    border-radius: 5%;
+    font-weight: 600;
+    font-size: 25px;
+    color: white;
+    padding:7px 11px;
+
+    transition: margin-left 2s ease-in-out 0.5s;
+}
+#anm:hover{
+    margin-left:200px ;
+    border-radius: 20%;
+    background-color: #333333;
+
+}
+
+
+/*
+transform=use to rotate or scale(size) or skew or translate(inc. margin)
+*/
+#anm {  
+    transform:rotate(-45deg);
+}
+#anm:hover {
+    transform: rotate(45deg);
+}
+/*
+we can use more than one transform at once
+transform : rotate() translate() ....etc;
+*/
+.op1{
+    height:30px;
+    width: 64px;
+    background-color:rgba(0, 0, 0, 0.7);
+    margin: 40px 50px;
+    border:1px solid white;
+    border-radius: 5%;
+    font-weight: 600;
+    font-size: 25px;
+    color: white;
+    padding:7px 11px;
+
+    transition: margin-left 2s ease-in-out 0.5s;
+}
+
+#opp1:hover{
+    margin-left: 200px;
+    transform: scale(1.2,1.5);
+}
+
+#opp2:hover{
+
+    transform: translate(50px,50px) skew(20deg);
+}
+/*translation happens instanly we unanle to set the duration for this*/
+
+
+/*
+box shadow
+
+box-shadow:x offset   y offset    blur radius    color of shadow ;
+*/
+#opp3{
+    margin-top: 65px;
+    box-shadow: 2px 2px 8px rgb(134, 134, 134);
+}
+
+#opp3:hover{
+    box-shadow: 2px 2px 8px rgb(255, 253, 253);
+}
+
+
+
+/*
+background image
+
+background-image:url("/path.jpg");
+
+background-size:contain(no crop,no scale,only repeats the image) cover(crop,no scale) auto(stretch)
+*/
+#ert{
+    height: 200px;
+    width: 400px;
+    margin: 30px;
+    background-image: url("C:/Users/hanuman/Downloads/hendrik-morkel-aHhIcAXjNnQ-unsplash.jpg") ;
+    background-size: 300px 200px ;
+}
+/*
+pixel method also repeats the image
+
+repeat is obv
+
+cover crop the image 
+
+and auto streaches it/zoom it 
+*/
+#ert1{
+    height: 200px;
+    width: 400px;
+    margin: 30px;
+    background-image: url("C:/Users/Dell/Downloads/pg1.jpg") ;
+    background-size:contain;
+}
+#ert2{
+    height: 200px;
+    width: 400px;
+    margin: 30px;
+    background-image: url("C:/Users/Dell/Downloads/pg1.jpg") ;
+    background-size:cover;
+}
+#ert3{
+    height: 200px;
+    width: 400px;
+    margin: 30px;
+    background-image: url("C:/Users/Dell/Downloads/pg1.jpg") ;
+    background-size:auto;
+}
+
+
+
+/*
+making resume cards
+*/
+
+
+
+.ee{
+    height: 320px;
+    width: 155px;
+    border:2px solid #4affc0 ;
+    background-color:#7d37ee;
+    box-shadow: 4px 4px 10px rgba(255, 255, 255,0.5);
+    margin: 0px 30px;
+    display: inline-block;
+    
+}
+.ee:hover{
+    box-shadow: 4px 4px 10px rgb(255, 255, 255);
+
+}
+.oiuu{
+    height: 140px;
+    width: 123px;
+    background-size: cover ;
+    margin: 3px 15px;
+}
+
+.oiu{
+    margin: 10px 10px;
+    background-color:#7d37ee;
+}
+#innr1{
+    background-image: url("C:/Users/hanuman/Downloads/man.jpg");
+}
+#innr2{
+    background-image: url("C:/Users/hanuman/Downloads/women.jpg");
+}
+.cardh3{
+    background-color: #7d37ee;
+}
+
+
+
+/*
+position properties
+
+top,right,left,bottom
+
+static=wrt to the webpage,,,but no changes will happen
+relative=wrt ot its initial propert,we r positioning it..
+absolute=relative to webpage
+fixed
+*/
+.lpo{
+    height: 100px;
+    width: 100px;
+    background-color: #29df00;
+    margin: 3px;
+}
+#position1{
+    position: static;
+    left: 200px;
+}
+#position2 {
+    position: relative;
+    left: 200px;
+    top: 50px;
+    background-color: #393bbd;
+}
+#position3{
+    position: absolute;
+    left: 350px;
+    top: 3900px;
+    background-color: #4affc0;
+}
+
+/*
+position 4 box is the three lined box at top right 
+*/
+#position4{
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    right:2px;
+    top: 1px;
+    background-color: rgba(255,255,255,0.2);
+    background-image: url("C:/Users/hanuman/Downloads/3line.png");
+    background-size: cover;
+    opacity: 0.7;
+}
+
+/*
+smily face
+*/
+#face{
+    height: 150px;
+    width: 150px;
+    background-color: #eaea0b;
+    border-radius: 50%;
+    margin:200px 100px;
+}
+#eye1{
+    height: 15px;
+    width: 15px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: relative;
+    top: 40px;
+    margin-left: 40px;
+}
+#eye2{
+    height: 15px;
+    width: 15px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: relative;
+    top: 25px;
+    margin-left: 90px;
+}
+#smile {
+    background-color: #000000;
+    margin: 70px 35px;
+}
+#hrtag {
+    border: 3px solid black;
+}
+
+
+/*
+flex box=1 d layout method for row or column(flexible layouts by which layout of website change on chamging size of site page)
+
+cross,main axis
+
+text align: center;
+
+display:flex;
+flex-direction:row or coulmn or row reverse or column reverse;
+
+(main axis)
+justify content: flex start or flex end or centee  or space between or space around or space evenly 
+or baseline ;
+baseline means all elements start from same line
+
+just content sets the space between the boxes in main exis
+and for flexstart,flexend,,,,all space in main axis willbe removed  
+and baseline gives the same height to the content
+
+
+flex-wrap: wrap or wrap reverse or no wrap;
+
+
+
+align item:flex start or flex end;  (used to set alignment of cross axis)
+it used to align the complete structur of boxes ,,,,,we can align the box layout as flex start ,by which the upper morder of the uppermost box with touch the upper side  
+
+and by flex end the lower border of the lowemost box with touch the lower side of container...
+*refer video easy hai
+when 
+
+
+align content:fle start or fle end or space between or.....baseline;  (cross axis)
+used to set spacing like justify content nut in cross axis direction
+and for flestart,flexend ,,,all space in cross axis willbe removed 
+and baseline gives the same height to the content
+*/
+#container1{
+    height: 400px ;
+    width: 500px;
+    border: 2px solid white;
+    background-color:#777777 ;
+    margin: 70px 5px;
+    display: flex;
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    align-items: flex-start;
+
+}
+#container1 div{
+    height: 30px;
+    width:90px;
+    font-size: 1em;
+}
+
+
+#container2{
+    height: 400px ;
+    width: 500px;
+    border: 2px solid white;
+    background-color:#777777 ;
+    margin: 70px 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    align-items: flex-end;
+
+}
+#container2 div{
+    height: 30px;
+    width:90px;
+    font-size: 1em;
+}
+
+
+#container3{
+    height: 400px ;
+    width: 500px;
+    border: 2px solid white;
+    background-color:#777777 ;
+    margin: 70px 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    
+    align-items: center;
+
+}
+#container3 div{
+    height: 30px;
+    width:90px;
+    font-size: 1em;
+}
+
+#container{
+    height: 400px;
+    width: 500px;
+    border: 2px solid white;
+    background-color: #777777;
+    margin: 70px 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+#container div{
+    height: 30px;
+    width:90px;
+    font-size: 1em;
+}
+
+#container4{
+    height: 400px;
+    width: 500px;
+    border: 2px solid white;
+    background-color: #777777;
+    margin: 70px 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    
+}
+#container4 div{
+    height: 30px;
+    width:90px;
+    font-size: 1em;
+}
+
+
+#container5{
+    height: 400px;
+    width: 500px;
+    border: 2px solid white;
+    background-color: #777777;
+    margin: 70px 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    align-content: flex-start;
+    
+}
+#container5 div{
+    height: 30px;
+    width:90px;
+    font-size: 1em;
+}
+
+#container6{
+    height: 400px;
+    width: 500px;
+    border: 2px solid white;
+    background-color: #777777;
+    margin: 70px 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    align-content: space-evenly;
+    
+}
+#container6 div{
+    height: 30px;
+    width:90px;
+    font-size: 1em;
+}
+
+
+/*
+align self=used to align a specific element in the conatainer,,,,,along cross axis direction
+
+priority: align-self > align-item
+
+*/
+#container7{
+    height: 400px;
+    width: 500px;
+    border: 2px solid white;
+    background-color: #777777;
+    margin: 70px 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: baseline;
+
+    
+}
+#container7 div{
+    height: 30px;
+    width:90px;
+    font-size: 1em;
+}
+
+#ind1 {
+    align-self: flex-end;
+}
+
+
+/*
+(in main axis direction)
+flex sizing=it changes the size of content or boxes acc to the size of containr,,,,,
+we are changing the size of container ,,then size of content wil also change
+
+
+topics in flex sizing
+
+flex-basis=it sets the initial main size of flex items/content  (main means size along main axis )
+the size of box cant be less than size of the text ,,if the width of the text is 50px than the minimum
+size that box can have is 50px,,box size will wont go beyond 50px
+
+if an over size is given to box size code,,but tha container is small,,,then the box will take maximum size possible
+
+
+flex-grow=it tells have the content size will grow whenever theres any space left
+default value of flex-grow is 1
+like---we have given flex-grow=1 to red ,,and flex grow=2 to violet,,,,then red and violet takes all the left
+space from main axis,in ratio 1:2 respectively
+
+
+max-width=obv for  content
+
+min-width=obv for content
+
+flex-shrink=it acts when there is oversize given to boxes
+so if flex-shrink=1 for red and 3 for violet,,,then it means voilet will shrink 3 times more than red
+
+
+
+*/
+#container8{
+    height: 400px;
+    width: 700px;
+    border: 2px solid white;
+    background-color: #777777;
+    margin: 45px 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: baseline;
+
+    
+}
+#container8 div{
+    height: 30px;
+    width:30px;
+    font-size: 1em;
+}
+#green1{
+    flex-basis:30px ;
+    flex-grow: 2;
+    flex-shrink: 2;
+    min-width:10px ;
+    max-width: 150px;
+
+}
+#indigo1{
+    flex-basis: 30px;
+    flex-grow: 1;
+    flex-shrink:1 ;
+    min-width: 20px;
+    max-width:120px;
+}
+/*
+flex short code/flex shorthand
+
+1.
+flex:2 2 100px;
+(flex grow_flex shrink_flex basis)
+
+2.
+flex:2 100px;
+(flex grow_flex basis)
+
+3.
+flex:2;
+(flex grow) 
+
+4.
+flex:100px;
+(flex basis)
+
+
+*we know flex grow and shrink are unitless while flex basis have unit
+*agar ek hi unitless number diya hai means vo flex grow hai
+*/
+
+
+/*
+practice question
+*/
+#pracflex{
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    border: 2px solid rgb(5, 100, 147);
+    border-radius: 3%;
+    margin: 45px 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+}
+#pracflex div{
+    height: 130px;
+    width: 130px;
+    background-color: #645858;
+    border: 2px solid black;
+    border-radius: 20%;
+    text-align: center;
+    font-weight: 700;
+    font-size:50px;
+    color: #000000;
+}
+
+/*
+grid=used for flexing in 2d while fle is 1d
+
+grid lines
+grid cell
+grid track 
+
+grid template=used to set no. of grid line and at what distance
+grid-template-rows: 20px 10px  .....;
+grid-template-coloumns: 20px 10px  .....;
+
+
+repeat template= repeat(no. of tracks,1fr);
+1fr means 1 faction of 100% available space,,so 1fr means 100% 
+fr varry from 0 to 1fr
+*/
+#gridcont{
+    height: 500px;
+    width: 400px;
+    background-color: black;
+    border: 2px solid white;
+    display: grid;
+    grid-template-columns: auto 120px 120px;
+    grid-template-rows: repeat(1,.2fr);
+    /*so repeat(3,1fr) means the 1fr(100%) available space of the container will be divided into three tracks*/
+}
+
+.item {
+    height: 50px;
+    width: 100px;
+    background-color: greenyellow;
+    border: 1px solid white;
+    color: #000000;
+    border-radius: 5%;
+    text-align: center;
+    margin: 5px;
+
+}
+ /*we barely use auto because it depend on the amount of content around it
+ auto rughly means ,,distributing remaining space to the tracks jiske liye auto likha hai*/
+
+
+
+
+
+ /*what will happen if we remove width,height feature from boxes in above example*/
+ #gridcont1{
+    height: 500px;
+    width: 400px;
+    background-color: black;
+    border: 2px solid white;
+    display: grid;
+    grid-template-columns: auto 120px 120px;
+    grid-template-rows: repeat(1,.2fr);
+    /*so repeat(3,1fr) means the 1fr(100%) available space of the container will be divided into three tracks*/
+}
+
+.item1 {
+
+
+    background-color: greenyellow;
+    border: 1px solid white;
+    color: #000000;
+    border-radius: 5%;
+    text-align: center;
+    margin: 5px;
+
+}
+
+/*
+grid gaps=it makes the grid lines thicker,,or it sets gaps between grid lines,,,,
+so the purple line in inspect will get thicker
+
+row-gap: 10px;
+coumn-gap:10px;
+
+grid-gap: "rowgap"px   "columngap"px ;
+*/
+#gridcont2{
+    height: 500px;
+    width: 400px;
+    background-color: black;
+    border: 2px solid white;
+    display: grid;
+    grid-template-columns: auto 120px 120px;
+    grid-template-rows: repeat(1,.2fr);
+    row-gap: 20px;
+    column-gap: 10px;
+}
+.item2 {
+    height: 50px;
+    width: 100px;
+    background-color: greenyellow;
+    border: 1px solid white;
+    color: #000000;
+    border-radius: 5%;
+    text-align: center;
+    margin: 5px;
+
+}
+/*
+grid column=if we want to combine two cells or more of grid then we use grid column
+
+grid-column-start:;
+grid-column-end:;
+
+grid-column: start   end;
+grid-column: 1   span 2;  it means line no. 1 se start karo and do columns tak jaao
+*/
+#gridcont3{
+    height: 500px;
+    width: 400px;
+    background-color: black;
+    border: 2px solid white;
+    display: grid;
+    grid-template-columns: auto 120px 120px;
+    grid-template-rows: repeat(1,.2fr);
+
+}
+
+.item3 {
+
+
+    background-color: greenyellow;
+    border: 1px solid white;
+    color: #000000;
+    border-radius: 5%;
+    text-align: center;
+    margin: 5px;
+
+}
+#itemj{
+     
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+/*
+grid row=if we want to combine two cells or more of grid then we use grid row
+
+grid-row-start:;
+grid-row-end:;
+
+grid-row: start   end;
+grid-row: 1   span 2;  it means line no. 1 se start karo and do rows tak jaao
+*/
+#gridcont4{
+    height: 500px;
+    width: 400px;
+    background-color: black;
+    border: 2px solid white;
+    display: grid;
+    grid-template-columns: auto 120px 120px;
+    grid-template-rows: repeat(1,.2fr);
+
+}
+
+.item4 {
+
+
+    background-color: greenyellow;
+    border: 1px solid white;
+    color: #000000;
+    border-radius: 5%;
+    text-align: center;
+    margin: 5px;
+
+}
+#itemk{
+     
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+/*agar grid row /column wale examolemei apan height and width daal de ,,
+,so chahe content puri combined area tak na pohoch paaye
+but area uske liye hi reserved rahega*/
+
+
+
+/*some properties for grid
+
+justify-item :center/end/start;   it will position all the box in the center of its grid cell in whole container
+
+justify-self:centre/end/start;    it will position a specific box in the center of its grid cell area
+
+
+similarly align items to position in vertical direction
+and align self to align/position a specific in vertical direction
+*/
+#gridcont5{
+    height: 500px;
+    width: 400px;
+    background-color: black;
+    border: 2px solid white;
+    display: inline-grid;
+    grid-template-columns: auto 120px 120px;
+    grid-template-rows: repeat(2,.2fr);
+   
+    justify-items: flex-start;
+    align-items: flex-end;
+}
+
+.item5 {
+    height: 50px;
+    width: 100px;
+    background-color: greenyellow;
+    border: 1px solid white;
+    color: #000000;
+    border-radius: 5%;
+    text-align: center;
+    margin: 5px;
+
+}
+#iteml{
+    align-self: self-start;
+    justify-self: center;
+}
+
+
+
+/*
+animations in css
+
+
+blueprint of animation--->
+
+@keyframes nameofthis{
+    from{state1};
+    to{state2};
+}
+
+-----------------
+animation-name 
+animation-duration
+animation-timing-function
+animation-delay 
+animation-iteration-count=  now much times we want we want to run the animation
+animation-directiom= animation will run backwards ,,or animation become ulti
+
+
+animation shorthand
+animation: myname  duration  ease-in  delay iteration-count  direction   ;
+*/
+
+#boxx{
+    height: 150px;
+    width: 150px;
+    background-color: #10c400;
+    margin-top: 40px;
+    color: #ffffff;
+    font-weight: 700;
+
+
+    animation: fontanimation 3s ease-out 0s infinite normal;
+}
+@keyframes fontanimation{
+    from{
+
+    }
+    to{
+        font-weight: 60px;
+        background-color: #000000;
+        width: 530px;
+    }
+}
+
+
+/*
+% in animation
+*/
+#boxxx{
+    height: 150px;
+    width: 150px;
+    background-color: #10c400;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: #ffffff;
+    font-weight: 700;
+
+
+    animation: fontanimation1 3s ease-out 0s infinite normal;
+}
+@keyframes fontanimation1{
+    0%{
+
+    }
+    50% {
+        background-color: #41c0a6;
+    }
+    80%{
+        background-color:#13077c
+    }
+    100%{
+        background-color: #4d0076;
+        width: 530px;
+        font-size: 30px;
+    }
+}
+
+/*
+media queries-it helps to make the website reponsive,,means a/c to width of page ,it changes layout 
+and dimension and positoion which od many elements
+
+oirentation-potrait,landscape
+
+max-width: px;= means width itna ya isse kam to tab changes apply honge
+min-witdh: px;= means width itna ya isse zada ho tab changes apply honge
+
+@media (min-width:400px) and (max-width:700px){
+    div{
+
+    }
+}
+*/
+#med{
+    background-color: #07097c;
+    height: 40px;
+    color: #ffffff;
+    margin: 50px 0px;
+    font-weight: 700;
+}
+
+
+@media(max-width :400px){
+    #med{
+        color: #c20000;
+    }
+}
+
+
+/*
+media in orientation
+*/
+@media(orientation:landscape){
+    #med{background-color: black;}
+}
+
+/*
+question:  responsive pet adoption page
+*/
+
+#page1{
+    background-color: white;
+    height:600px;
+    width: 1000px;
+    border-radius: 5%;
+}
+#lkk{
+    height: 25px;
+    width: 50px;
+    background-color: white;
+    font-family:cursive;
+    color: #ab6700;
+    font-weight: 900;
+    margin:30px 20px;
+    position:relative ;
+    top:20px;
+
+}
+.pet{
+    height: 300px;
+    width: 300px;
+    border: 2px solid black ;
+    border-radius: 5%;
+    margin: 110px 50px;
+    background-color: white;
+    display: inline-block;
+
+}
+
+#hdd1{
+    background-color: white;
+    color: #000000;
+    font-weight: 800;
+    margin-left: 20px;
+    margin-top: 10px;
+    position: relative;
+    top: 10px;
+}
+#hdd1 div {
+    color: #515500;
+    background-color: white;
+}
+.wtt{
+    background-color: white;
+}
+#tom{
+    background-image: url("C:/Users/hanuman/Downloads/tom.jpg") ;
+    height: 140px;
+    width: 290px;
+    background-size: cover;
+    margin: 7px 4px;
+
+}
+#jerry{
+    background-image: url("C:/Users/hanuman/Downloads/jerry.jpg");
+    height: 140px;
+    width: 290px;
+    background-size:cover;
+    margin: 7px 4px;
+}
+/*
+z-index=it tells which element will will be above ,when they are overlapping
+
+by default id any two elements are overlapping then,,the style code we have writtrn lately ,,will visible on front
+
+we cant use z-index property for static and default position
+we can use it for reltaive,fixed and others
+
+the element which has more the z index value will be visible in front
+*/
+
+.bgt{
+    height: 120px;
+    width: 120px;
+}
+#b1{
+    background-color: #10c400;
+    position: relative;
+    top: 40px;
+    left: 20px;
+    z-index: 3;
+}
+#b2{
+    background-color: #ce0000;
+    position: relative;
+    left: 60px;
+    z-index: 2;
+}
+#b3{
+    background-color: #0092ed;
+    position: relative;
+    bottom: 190px;
+    left: 120px;
+    z-index: 1;
+}
+
+
+
+/*
+color theory----->
+color wheel
+
+meaning associate with color and color shades
+
+search  canva color wheel,to get color combinations
+
+(subtle/monochromatic color combo,impactful/complementary  color combo)
+*/
+ 
+/*
+typography(text family/style)-------->
+danger text style
+font style--->
+funky,funny(fantasy) like for-icecreeam website
+old,vintage like for museum website
+professinal like for times of india
+
+some font families-->
+sans-serif
+serif
+monospace
+cursive
+fantasy
+*/
+
+/*
+google fonts-a library of around 1500 free font styles,
+
+search google font on web to see all fonts by google
+ans use the html and css code to apply them
+*/
+#gfont1{
+    height: 100px;
+    width: 30px;
+    font-size: x-large;
+    font-family: 'Rubik Burned', system-ui;
+}
+/*
+icons
+
+search fontawesome,cdnjs(like i applied in netflix,photgraphy site)
+search google icons for free icons
+use the html code to apply a icon
+*/
+.icon1{
+    height: 50px;
+    width: 40px;
+    background-color: #10c400;
+    /*we can only set the color by style code in html,,we cant do it by id,class..etc with css*/
+}
+/*
+bootstrap-most popular toolkit/framework of css(frontend toolkit)
+
+search "getbootstrap.com"
+
+we can directly add goodlooking big forms ,buttons,nav bars cards and many more
+from this toolkit
+
+it is compatible in every browser...
+
+paste css link in html link tag as a stylesheet
+and paste the element tag of button ,form in body area
+*/
+
+
+/*
+
+cdn=content delivery network,,the network which deliveres conten to  us 
+everry content (photo,video ..etc) requires a cdn to work on our device
+
+btn 
+btn btn-danger
+btn btn-success
+chcek style
+
+components=like buttons,forms
+layouts=like conatainer ,grids
+
+conainer layout
+container class in bootstrap ,,by deafult adds margin,changes 
+font weight ,font style of the content 
+
+conteiner-md class
+container-fluid class
+check bootstrap  site>layout>container>table in it
+
+
+button components(btn class)=
+btn 
+btn btn-danger
+btn btn-success
+btn btn-info
+outline buttons 
+link button
+*/
+#btn1{
+
+    color: #10c400;
+    background-color: #000000;
+    }
+#cont0{
+    color: #10c400;
+    background-color: #000276;
+    /*nothing get applied through css ;(*/
+}
+
+/*
+badge class
+
+br tag is used to take a line break
+
+badge inside button=
+just create a span (badge class) inside the button tag
+rounded pill
+
+badge on a button's corner 
+
+Alert class=make a alert class with div
+
+we add cdn js code to do the closing of the alert
+
+*/
+#alert1{
+    color: white;
+    background-color: #6c2d2d;
+}
+/*
+button group
+
+nav bar
+
+cards
+*/
+#nav1,#nav2{
+    background-color: #000000;
+    color: white;
+    
+}
+#card1{
+    margin-left: 50px;
+}
+
+/*
+grids=by default grid is divided into 12 equal units(12 coloumn system)
+
+the layout changes when we decrease the size of main page
+
+col-6=50% width at every screen size
+col-md-6=it means the div ocupy 100% width below medium size(768px) and 50%(6 units) width above it
+
+similarly for xs,md,lg,xl
+
+we can alsp use more than one col ,,like "xs-2 md-3 lg-6 xl-9"
+*/
+
+#grid1{
+    background-color: #0092ed;
+}
+/*
+align item classes=
+align-items-end ,align-item-start,..
+*/
+
+
+/*
+form control=class given to input div
+form-Label=class given to its label tag,,this will import the form with label on our page
+
+form-control-lg=form input with bigger size
+*/
+
+/*
+form-select=class given to select tag to import the select feature/dropdown 
+
+checkbox classes=
+form-check=class given to outer div of checkbox ipnut tag
+form-check-input=class given to input tag  (checkbox)
+
+same we can use radio,switches
+*/
+
+/*
+form layout
+giving class to outer form div ,,to apply layout changes on change of screen size
+*/  
+
+.oldimg{
+    height: 200px;
+    width: 1000px;
+    margin-top: 30px;
+    background-image: url("C:/Users/hanuman/Downloads/picc2.jpg") ; 
+}
+/*jpg link is of a forest*/
+
+#ghj3{
+    font-size: 28px;
+    
+}
+.bip{
+    text-decoration: underline;
+}
+#gc{
+    height: 100px;
+    width: 400px;
+    border:1px solid white;
+}
+.gcc{
+    text-align: center;
+    margin: auto;
+}
+#div1{
+    background-color: pink;
+    height: 200px;
+    width: 400px;
+    margin: auto;
+    margin-top: 60px;
+    
+}
+#ul1{
+    background: blue;
+}
+.li1{
+    background-color: greenyellow;
+    color: black;
+}
+.btn76{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    margin: 1.5rem;
+    border-radius: 5%;
+}
+.mdd{
+    display: flex;
+    justify-content: center;
+}
+.reds{
+    background-color: red;
+}
+.greens{
+    background-color: green;
+}
+.purples{
+    background-color:purple;
+}
+.blues{
+    background-color: blue;
+}
+
+.flash{background-color: white;}
+.userflash{
+    background-color: rgb(165, 215, 159);
+}

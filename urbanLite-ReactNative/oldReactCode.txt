@@ -1,0 +1,658 @@
+this is my old react native code that i built using expo ,,,,can you please use these codes to make apk in new cli method   
+  
+root:index.tsx--->  
+import { Redirect } from 'expo-router';
+  
+
+  
+export default function StartRedirect() {
+  
+  return <Redirect href="/auth/splash" />;
+  
+}
+  
+  
+  
+root:not-found.jsx---->  
+import { Link, Stack } from 'expo-router';
+  
+import { StyleSheet } from 'react-native';
+  
+
+  
+import { ThemedText } from '@/components/ThemedText';
+  
+import { ThemedView } from '@/components/ThemedView';
+  
+
+  
+export default function NotFoundScreen() {
+  
+  return (
+  
+    <>
+  
+      <Stack.Screen options={{ title: 'Oops!' }} />
+  
+      <ThemedView style={styles.container}>
+  
+        <ThemedText type="title">This screen doesn't exist.</ThemedText>
+  
+        <Link href="/" style={styles.link}>
+  
+          <ThemedText type="link">Go to home screen!</ThemedText>
+  
+        </Link>
+  
+      </ThemedView>
+  
+    </>
+  
+  );
+  
+}
+  
+
+  
+const styles = StyleSheet.create({
+  
+  container: {
+  
+    flex: 1,
+  
+    alignItems: 'center',
+  
+    justifyContent: 'center',
+  
+    padding: 20,
+  
+  },
+  
+  link: {
+  
+    marginTop: 15,
+  
+    paddingVertical: 15,
+  
+  },
+  
+});  
+  
+  
+layout.tsx--->(root)  
+
+  
+import { Slot } from "expo-router";
+  
+
+  
+export default function RootLayout() {
+  
+  return <Slot />;
+  
+}
+  
+  
+  
+splash.tsx----->  
+import React, { useEffect } from 'react';
+  
+import { View, Text, StyleSheet } from 'react-native';
+  
+import { useRouter } from 'expo-router';
+  
+
+  
+const SplashScreen = () => {
+  
+  const router = useRouter();
+  
+
+  
+  useEffect(() => {
+  
+    const timer = setTimeout(() => {
+  
+      router.replace('/auth/Login');
+  
+    }, 2000);
+  
+
+  
+    return () => clearTimeout(timer);
+  
+  }, []);
+  
+
+  
+  return (
+  
+    <View style={styles.container}>
+  
+      <Text style={styles.logo}>Worko</Text>
+  
+      <Text style={styles.loadingText}>Just there..</Text>
+  
+      <View style={styles.progressBar} />
+  
+      <Text style={styles.tagline}>India’s No. 1 platform to find skilled worker</Text>
+  
+    </View>
+  
+  );
+  
+};
+  
+
+  
+const styles = StyleSheet.create({
+  
+  container: { flex: 1, backgroundColor: '#000', justifyContent: 'center', alignItems: 'center' },
+  
+  logo: { fontSize: 40, color: 'white', marginBottom: 20 },
+  
+  loadingText: { color: '#aaa' },
+  
+  progressBar: { width: 200, height: 5, backgroundColor: '#8e44ad', marginVertical: 20 },
+  
+  tagline: { color: 'gray', position: 'absolute', bottom: 30, textAlign: 'center' },
+  
+});
+  
+
+  
+export default SplashScreen;
+  
+  
+
+  
+  
+  
+  
+login.tsx---->  
+import React from 'react';
+  
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+  
+import { useRouter } from 'expo-router'; // ✅ Add this
+  
+
+  
+const LoginScreen = () => {
+  
+  const router = useRouter(); // ✅ Hook for navigation
+  
+
+  
+  const handleContinue = () => {
+  
+    router.replace('/(tabs)');
+  
+  };  
+  
+
+  
+  return (
+  
+    <View style={styles.container}>
+  
+      <Text style={styles.title}>Register/Login</Text>
+  
+      <TextInput
+  
+        style={styles.input}
+  
+        placeholder="Mobile Number/Email/Username"
+  
+        placeholderTextColor="#888"
+  
+      />
+  
+      <TouchableOpacity style={styles.button} onPress={handleContinue}>
+  
+        <Text style={styles.buttonText}>Continue</Text>
+  
+      </TouchableOpacity>
+  
+      <Text style={styles.or}>──────────  Or  ──────────</Text>
+  
+      <TouchableOpacity style={styles.socialButton}><Text>Continue with Google</Text></TouchableOpacity>
+  
+      <TouchableOpacity style={styles.socialButton}><Text>Continue with Apple</Text></TouchableOpacity>
+  
+      <Text style={styles.footer}>© Worko.com</Text>
+  
+    </View>
+  
+  );
+  
+};
+  
+
+  
+const styles = StyleSheet.create({
+  
+  container: { flex: 1, backgroundColor: '#000', padding: 20, justifyContent: 'center' },
+  
+  title: { color: 'white', fontSize: 24, marginBottom: 20 },
+  
+  input: { borderColor: 'gray', borderWidth: 1, color: 'white', padding: 10, marginBottom: 20 },
+  
+  button: { backgroundColor: '#a259ff', padding: 15, borderRadius: 5, alignItems: 'center' },
+  
+  buttonText: { color: 'white', fontWeight: 'bold' },
+  
+  or: { color: '#aaa', textAlign: 'center', marginVertical: 20 },
+  
+  socialButton: { backgroundColor: 'white', padding: 15, borderRadius: 5, marginBottom: 10, alignItems: 'center' },
+  
+  footer: { textAlign: 'center', color: '#555', marginTop: 30 },
+  
+});
+  
+
+  
+export default LoginScreen;
+  
+  
+  
+layout.tsx of auth---->  
+import { Stack } from "expo-router";
+  
+
+  
+export default function AuthLayout() {
+  
+  return (
+  
+    <Stack>
+  
+      <Stack.Screen name="splash" options={{ headerShown: false }} />
+  
+      <Stack.Screen name="login" options={{ headerShown: false }}  />
+  
+    </Stack>
+  
+  );
+  
+}
+  
+  
+index.tsx of tabs---->  
+import React, { useEffect, useRef, useState } from 'react';
+  
+import {
+  
+  View,
+  
+  Text,
+  
+  TextInput,
+  
+  ScrollView,
+  
+  Image,
+  
+  Dimensions,
+  
+  TouchableOpacity,
+  
+  StyleSheet,
+  
+} from 'react-native';
+  
+import { Ionicons } from '@expo/vector-icons';
+  
+
+  
+const { width } = Dimensions.get('window');
+  
+
+  
+const bannerImages = [
+  
+  require('../../assets/banner1.png'),
+  
+  require('../../assets/banner2.png'),
+  
+  require('../../assets/banner3.png'),
+  
+];
+  
+
+  
+const HomeScreen = () => {
+  
+  const [location, setLocation] = useState('Pratap Nagar, Jaipur');
+  
+  const scrollRef = useRef<ScrollView>(null);
+  
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+
+  
+  // Auto-slide banner logic
+  
+  useEffect(() => {
+  
+    const interval = setInterval(() => {
+  
+      const nextIndex = (currentIndex + 1) % bannerImages.length;
+  
+      scrollRef.current?.scrollTo({ x: nextIndex * width, animated: true });
+  
+      setCurrentIndex(nextIndex);
+  
+    }, 3000); // 3 seconds
+  
+
+  
+    return () => clearInterval(interval);
+  
+  }, [currentIndex]);
+  
+
+  
+  return (
+  
+    <View style={styles.container}>
+  
+      {/* Top Bar */}
+  
+      <View style={styles.topBar}>
+  
+        <Text style={styles.logoText}>UrbanLite</Text>
+  
+        <View style={styles.topIcons}>
+  
+          <Ionicons name="walk" size={24} color="white" style={{ marginRight: 12 }} />
+  
+          <View style={styles.profileIcon} />
+  
+        </View>
+  
+      </View>
+  
+
+  
+      <View style={styles.innerContainer}>
+  
+        {/* Search Fields */}
+  
+        <View style={styles.searchContainer}>
+  
+          <TextInput style={styles.input} placeholder="Maid" />
+  
+          <TextInput
+  
+            style={styles.input}
+  
+            value={location}
+  
+            onChangeText={setLocation}
+  
+            placeholder="Enter location"
+  
+          />
+  
+        </View>
+  
+
+  
+        {/* Auto-sliding Banner */}
+  
+        <ScrollView
+  
+          ref={scrollRef}
+  
+          horizontal
+  
+          pagingEnabled
+  
+          showsHorizontalScrollIndicator={false}
+  
+          style={styles.banner}
+  
+        >
+  
+          {bannerImages.map((img, index) => (
+  
+            <Image key={index} source={img} style={styles.bannerImage} />
+  
+          ))}
+  
+        </ScrollView>
+  
+
+  
+        {/* Service Selection */}
+  
+        <Text style={styles.sectionTitle}>Select a service</Text>
+  
+        <View style={styles.boxRow}>
+  
+          <Box label="Cook" />
+  
+          <Box label="Cleaner" />
+  
+          <Box label="Driver" />
+  
+        </View>
+  
+
+  
+        {/* Plan Selection */}
+  
+        <Text style={styles.sectionTitle}>Select a plan</Text>
+  
+        <View style={styles.boxRow}>
+  
+          <Box label="Standard" />
+  
+          <Box label="Premium" />
+  
+          <Box label="Monthly" />
+  
+        </View>
+  
+
+  
+        {/* Schedule */}
+  
+        <Text style={styles.sectionTitle}>Schedule</Text>
+  
+        <TextInput style={styles.input} placeholder="Choose time" />
+  
+
+  
+        {/* Proceed Button */}
+  
+        <TouchableOpacity style={styles.proceedButton}>
+  
+          <Text style={styles.proceedText}>Proceed</Text>
+  
+        </TouchableOpacity>
+  
+      </View>
+  
+    </View>
+  
+  );
+  
+};
+  
+
+  
+const Box = ({ label }: { label: string }) => (
+  
+  <View style={styles.box}>
+  
+    <Text>{label}</Text>
+  
+  </View>
+  
+);
+  
+
+  
+const styles = StyleSheet.create({
+  
+  container: { flex: 1, backgroundColor: '#fff' },
+  
+  topBar: {
+  
+    backgroundColor: '#000',
+  
+    flexDirection: 'row',
+  
+    justifyContent: 'space-between',
+  
+    alignItems: 'center',
+  
+    padding: 12,
+  
+  },
+  
+  logoText: { color: '#fff', fontSize: 20, fontWeight: 'bold' },
+  
+  topIcons: { flexDirection: 'row', alignItems: 'center' },
+  
+  profileIcon: {
+  
+    width: 24,
+  
+    height: 24,
+  
+    backgroundColor: '#888',
+  
+    borderRadius: 12,
+  
+  },
+  
+  innerContainer: { padding: 16 },
+  
+  title: { fontSize: 24, fontWeight: 'bold', marginBottom: 10 },
+  
+  searchContainer: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10 },
+  
+  input: {
+  
+    flex: 1,
+  
+    backgroundColor: '#f0f0f0',
+  
+    borderRadius: 25,
+  
+    paddingHorizontal: 16,
+  
+    paddingVertical: 10,
+  
+    marginRight: 8,
+  
+  },
+  
+  banner: {
+  
+    width: '100%',
+  
+    height: 200,
+  
+    borderRadius: 16,
+  
+    marginBottom: 20,
+  
+  },
+  
+  bannerImage: {
+  
+    width: width - 32,
+  
+    height: 200,
+  
+    resizeMode: 'cover',
+  
+    borderRadius: 16,
+  
+    marginRight: 16,
+  
+  },
+  
+  sectionTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 8 },
+  
+  boxRow: {
+  
+    flexDirection: 'row',
+  
+    justifyContent: 'space-between',
+  
+    marginBottom: 16,
+  
+  },
+  
+  box: {
+  
+    backgroundColor: '#e0e0e0',
+  
+    borderRadius: 12,
+  
+    padding: 20,
+  
+    flex: 1,
+  
+    marginRight: 8,
+  
+    alignItems: 'center',
+  
+  },
+  
+  proceedButton: {
+  
+    backgroundColor: '#A855F7',
+  
+    paddingVertical: 14,
+  
+    borderRadius: 16,
+  
+    marginTop: 20,
+  
+  },
+  
+  proceedText: {
+  
+    color: 'white',
+  
+    textAlign: 'center',
+  
+    fontWeight: 'bold',
+  
+    fontSize: 16,
+  
+  },
+  
+});
+  
+
+  
+export default HomeScreen;
+  
+  
+  
+  
+layout.tsx of tabs--->  
+import { Tabs } from "expo-router";
+  
+
+  
+export default function TabsLayout() {
+  
+  return (
+  
+    <Tabs>
+  
+      <Tabs.Screen name="index" options={{ headerShown: false }}  />
+  
+    </Tabs>
+  
+  );
+  
+}

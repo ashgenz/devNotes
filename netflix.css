@@ -1,0 +1,309 @@
+*{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+#outer{
+    height: 10000px;
+    width: 1345px;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    top: -3px;
+    left: -3px;
+}
+#logo{
+    background: url("C:/Users/Dell/Downloads/logo.jpg");
+}
+#moneywall{
+    height:74vh;
+    width: 165vh;
+    background-image: url("C:/Users/Dell/Downloads/money.jpg");
+    background-size: cover;
+    position: relative;
+    left: 60vh;
+    top: 1px;
+    border-radius: 4%;
+    opacity:1;
+}
+
+#sidepage{
+    height: 110vh;
+    width: 60px;
+    position: fixed;
+    left: -3px;
+    top: -3px;
+    display: inline-block;
+    opacity: 0.08;
+    box-shadow: 6px 0 6px rgb(255, 255, 255,0.7);
+}
+#chk{
+    height: 30px;
+    width: 30px;
+    color: white;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+
+}
+#menu{
+    height: 35px;
+    width: 35px;
+    font-size: 27px;
+    border-radius: 8%;
+    position: fixed;
+    top: 0px;
+    left: 8px;
+    z-index: 1;
+    padding: 8px 0px 0px 8px;
+}
+#menu:hover{
+    background-color: rgba(194, 194, 194, 0.22);
+}
+.jj{
+    height: 32px;
+    width: 32px;
+    margin: 14px;
+    font-size: 15px;
+    position: relative;
+    left: -50px;
+    font-weight: 200;
+    padding:12px 0px 0px 12px;
+    opacity: 0.7;
+    border-radius: 15%;
+
+}
+.jj:hover{
+    background-color: rgb(255, 255, 255,0.22);
+}
+#logo{
+    height: 30px;
+    width: 20px;
+    background-image: url("C:/Users/Dell/Downloads/logo.jpg");
+    background-size: cover;
+    position: relative;
+    top: -399px;
+    left: 50px;
+}
+#series{
+    height: 20px;
+    width: 60px;
+    font-weight: 100;
+    position: relative;
+    font-family: 'Source Code Pro', monospace;
+
+    top: -340px;
+    left: 130px;
+}
+#money{
+    height: 65px;
+    width: 135px;
+   /* background-image: url("C:/Users/hanuman/Downloads/moneyh.jpg");
+*/    background-size: cover;
+    position: relative;
+    top: -333px;
+    left: 85px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 67px;
+    font-weight: 900;
+}
+#heist{
+    height: 67px;
+    width: 125px;
+    color: black;
+    text-align: center;
+    background-color: rgb(190, 0, 0);
+    font-family: 'Bebas Neue', sans-serif;
+    position: relative;
+    top: -400px;
+    left: 230px;
+    font-size: 71px;
+    font-weight: 900;
+    padding-bottom: 6px;
+    
+
+}
+#part{
+    height: 20px;
+    width: 60px;
+    position: relative;
+    top: -390px;
+    left: 190px;
+}
+#view{
+    height: 20px;
+    width: 60px;
+    font-weight: 800;
+    font-size: 17px;
+    position: relative;
+    color: rgb(165, 0, 0);
+    top: -300px;
+    left: 97px;
+}
+#ratings{
+    height: 17px;
+    width: 80px;
+    font-size: 13px;
+    font-weight: 700;
+    position: relative;
+    top: -325px;
+    left: 150px;
+}
+#imdb{
+    height: 18px;
+    width:40px;
+    background-image: url("C:/Users/Dell/Downloads/imdb.png");
+    background-size: cover;
+    position: relative;
+    top: -310px;
+    left: 100px;
+}
+#stream{
+    height: 20px;
+    width: 60px;
+    font-size: 18px;
+    position: relative;
+    top: -320px;
+    left: 130px;
+}#play{
+    height: 29px;
+    width: 70px;
+    font-size: 20px;
+    background-color: rgb(198, 12, 12);
+    border-radius: 15px;
+    padding-left:27px;
+    padding-top: 5px;
+    position: relative;
+    top: -300px;
+    left: 90px;
+}#watch{
+    height: 27px;
+    width: 108px;
+    font-size: 17px;
+    font-weight: 600;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    padding-left:22px;
+    padding-top: 7px;
+    position: relative;
+    top: -333px;
+    left: 200px;
+}#new{
+    height: 20px;
+    width: 200px;
+    font-weight: 700;
+    font-size: 20px;
+    font-family: 'Source Code Pro', monospace;
+    position: relative;
+    top: -310px;
+    left: 70px;
+}
+#trending{
+    height: 20px;
+    width: 60px;
+    position: relative;
+    top: 500px;
+    left: 100px;
+}
+.jj{
+    left: -200px;
+}
+#check:checked ~.jj{
+        transition: animation 2s  ease-out 0s;
+        position: relative;
+        left: -55px;
+        
+
+}
+#moneyb{
+    height:300px ;
+    width: 800px;
+    opacity: 0;
+    box-shadow: 0 0 80px rgb(0, 0, 0);
+    position: fixed;
+    top:30px;
+    left: 80vh;
+}
+#movie1{
+    height: 230px;
+    width: 130px;
+    background-image: url("C:/Users/Dell/Downloads/pic2.jpg");
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+    top: -300px;
+    left: 70px;
+
+}
+#movie2{
+    height: 230px;
+    width: 130px;
+    background-image: url("C:/Users/Dell/Downloads/pic1.jpg");
+    background-size: cover;
+    display: inline-block;
+    position:relative;
+    bottom: 300px;
+    left: 70px;
+
+}
+#movie3{
+    height: 230px;
+    width: 130px;
+    background-image: url("C:/Users/Dell/Downloads/pic2.jpg");
+    background-size: cover;
+    display: inline-block;
+    position:relative;
+    bottom: 300px;
+    left:25px;
+
+}#movie4{
+    height: 230px;
+    width: 130px;
+    background-image: url("C:/Users/Dell/Downloads/pic1.jpg");
+    background-size: cover;
+    display: inline-block;
+    position:relative;
+    bottom: 300px;
+    left: 25px;
+
+}#movie5{
+    height: 230px;
+    width: 130px;
+    background-image: url("C:/Users/Dell/Downloads/pic2.jpg");
+    background-size: cover;
+    display: inline-block;
+    position:relative;
+    bottom: 300px;
+    left: 25px;
+
+}#movie6{
+    height: 230px;
+    width: 130px;
+    background-image: url("C:/Users/Dell/Downloads/pic1.jpg");
+    background-size: cover;
+    display: inline-block;
+    position:relative;
+    bottom: 300px;
+    left: 25px;
+
+}#movie7{
+    height: 230px;
+    width: 130px;
+    background-image: url("C:/Users/Dell/Downloads/pic2.jpg");
+    background-size: cover;
+    display: inline-block;
+    position:relative;
+    bottom: 300px;
+    left: 25px;
+
+}#movie8{
+    height: 230px;
+    width: 130px;
+    background-image: url("C:/Users/Dell/Downloads/pic1.jpg");
+    background-size: cover;
+    display: inline-block;
+    position:relative;
+    bottom: 300px;
+    left: 25px;
+}

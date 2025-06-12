@@ -1,0 +1,26 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #617060;
+}
+#bg{
+    height: 100vh;
+    width: 100%;
+}
+#zusic{
+      font-size: 48px;
+      color: white;
+      position: absolute;
+      top: -27px;
+      left: 47px;
+}
+#header{
+    height: 50px;
+    width: 1280px;
+    background-color: black;
+    border-radius: 10px;
+    position: absolute;
+    top: 0px;
+    left: 240px;
+}
